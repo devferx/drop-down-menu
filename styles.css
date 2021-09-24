@@ -1,0 +1,25 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --blue: #2f80ed;
+  --body1-bold: 700 1rem/1.25rem Inter;
+  --body1-regular: 400 0.875rem/1.25rem Inter;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font: var(--body1-regular);
+}
+
+body {
+  background: linear-gradient(135deg, #2afadf 0%, #4c83ff 100%);
+}
+
+.container {
+  padding: 24px;
+}
