@@ -17,9 +17,126 @@ html {
 }
 
 body {
+  width: 100%;
+  height: 100vh;
   background: linear-gradient(135deg, #2afadf 0%, #4c83ff 100%);
 }
 
 .container {
   padding: 24px;
+}
+
+.navbar__list {
+  display: flex;
+  gap: 8px;
+}
+.navbar__list li {
+  list-style: none;
+}
+
+.navbar__list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__list > li {
+  display: flex;
+  position: relative;
+}
+
+.navbar__list > li > a {
+  font: var(--body1-bold);
+  color: black;
+  padding: 12px;
+  background: white;
+  width: 100%;
+  text-decoration: none;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.12), 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+.navbar__list a:hover {
+  color: white;
+  background: black;
+}
+
+.navbar__list__sublist {
+  position: absolute;
+  bottom: -18px;
+  transform: translateY(100%);
+}
+
+.navbar__list__sublist {
+  width: 100%;
+  background: white;
+  border: 4px solid black;
+  visibility: hidden;
+  opacity: 0;
+  transition: 450ms;
+}
+
+.navbar__list__sublist li {
+  position: relative;
+}
+
+.navbar__list__sublist li:hover .navbar__list__sublist__list {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navbar__list__sublist a {
+  display: flex;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-family: "Inter";
+  font-size: 14px;
+  line-height: 20px;
+  color: black;
+}
+
+.navbar__list li:hover .navbar__list__sublist {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navbar__list__sublist__list {
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  right: 8px;
+  background: white;
+  border: 4px solid black;
+  transition: 450ms;
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 999;
+}
+
+@media screen and (max-width: 534px) {
+  .navbar__list {
+    flex-direction: column;
+  }
+
+  .navbar__list > li {
+    flex-direction: column;
+  }
+
+  .navbar__list__sublist {
+    position: static;
+    visibility: visible;
+    transform: initial;
+    opacity: 1;
+  }
+
+  .navbar__list__sublist__list {
+    position: static;
+    visibility: visible;
+    transform: initial;
+    opacity: 1;
+    border: none;
+    padding-left: 24px;
+  }
+
+  .navbar__list a > img {
+    transform: rotate(90deg);
+  }
 }
